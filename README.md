@@ -12,8 +12,8 @@ At its core, Geet is built to cater to music lovers who appreciate simplicity wi
 - Backward/Forward Controls: Navigate through your playlist effortlessly with it's backward and forward buttons. Whether you're in the mood to revisit a previous song or you're looking forward to discovering your next favorite track, these controls provide you with the power to curate your listening experience on the fly.
 
 ## Technologies
-- **Frontend**: HTML, JS
-- **Styling**: CSS
+- **Frontend**: Reactjs
+- **Styling**: TailwindCSS
 
 ## Getting Started
 
@@ -27,13 +27,13 @@ At its core, Geet is built to cater to music lovers who appreciate simplicity wi
    ```bash
    git clone https://github.com/Siddharth-Dagar-25/MusicPlayer
 
-2. **Install dependencies for the app(Optional):**
+2. **Install dependencies for the app:**
     ```bash
     npm install
 
-3. **Start the app(Optional, you can directly run the live server using HTML file):**
+3. **Start the app:**
     ```bash
-    node script.js
+    npm start
 
 ## Contributing
 I welcome any and all contributions! Here are some ways you can get started:
