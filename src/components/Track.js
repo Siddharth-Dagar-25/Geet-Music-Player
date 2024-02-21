@@ -4,41 +4,58 @@ import { songsData } from '../constants/data.js';
 const Track = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  // Store the audio element in a ref to persist the same audio element across re-renders
-  const audioRef = React.useRef(new Audio(songsData[0].song_url));
+  const audioRef = useRef(new Audio(songsData[0].song_url));
+
+  // Function to go to the next song
+  const goToNextSong = () => {
+    setCurrentSongIndex((prevIndex) => (prevIndex < songsData.length - 1 ? prevIndex + 1 : 0));
+  };
 
   useEffect(() => {
-    // This effect toggles play/pause based on isPlaying state
+    // Event listener for when the song ends
+    const songEnded = () => {
+      goToNextSong();
+    };
+
+    // Add event listener for the 'ended' event
+    const currentAudio = audioRef.current;
+    currentAudio.addEventListener('ended', songEnded);
+
+    // Play the song if isPlaying is true
     if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
+      currentAudio.play().catch((e) => console.error(e));
     }
-  }, [isPlaying]); // Re-run this effect when isPlaying changes
+
+    // Cleanup function to remove the event listener
+    return () => {
+      currentAudio.removeEventListener('ended', songEnded);
+    };
+  }, [isPlaying]); // This effect depends on isPlaying
 
   useEffect(() => {
-    // Stop and clean up the current song before switching
+    // Function to switch song
     const switchSong = () => {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      audioRef.current = new Audio(songsData[currentSongIndex].song_url);
+      const currentAudio = audioRef.current;
+      currentAudio.src = songsData[currentSongIndex].song_url;
       if (isPlaying) {
-        audioRef.current.play();
+        currentAudio.play().catch((e) => console.error(e));
       }
     };
+
     switchSong();
 
     return () => {
       audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     };
-  }, [currentSongIndex]); // Re-run this effect when currentSongIndex changes
+  }, [currentSongIndex]); // This effect depends on currentSongIndex
 
   const playPauseHandler = () => {
     setIsPlaying(!isPlaying);
   };
 
   const nextSongHandler = () => {
-    setCurrentSongIndex((prevIndex) => (prevIndex < songsData.length - 1 ? prevIndex + 1 : 0));
+    goToNextSong();
   };
 
   const prevSongHandler = () => {
