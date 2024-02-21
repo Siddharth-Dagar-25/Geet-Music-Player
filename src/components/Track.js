@@ -4,45 +4,44 @@ import { songsData } from '../constants/data.js';
 const Track = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const audioRef = useRef(new Audio(songsData[0].song_url));
+  const audioRef = useRef(null);
+
+  // Initialize or update the audioRef.current with the current song
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+    audioRef.current = new Audio(songsData[currentSongIndex].song_url);
+    
+    // Automatically play the new song if isPlaying is true
+    if (isPlaying) {
+      audioRef.current.play().catch((e) => console.error('Playback was prevented:', e));
+    }
+
+    // Add an event listener to handle automatic playback when the song ends
+    const handleSongEnd = () => {
+      goToNextSong();
+    };
+
+    audioRef.current.addEventListener('ended', handleSongEnd);
+
+    return () => {
+      audioRef.current.removeEventListener('ended', handleSongEnd);
+    };
+  }, [currentSongIndex]);
+
+  // Effect to toggle play/pause
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play().catch((e) => console.error('Playback was prevented:', e));
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]);
 
   const goToNextSong = () => {
     setCurrentSongIndex((prevIndex) => (prevIndex < songsData.length - 1 ? prevIndex + 1 : 0));
   };
-
-  useEffect(() => {
-    const songEnded = () => {
-      goToNextSong();
-    };
-
-    const currentAudio = audioRef.current;
-    currentAudio.addEventListener('ended', songEnded);
-
-    if (isPlaying) {
-      currentAudio.play().catch((e) => console.error(e));
-    }
-
-    return () => {
-      currentAudio.removeEventListener('ended', songEnded);
-    };
-  }, [isPlaying]);
-
-  useEffect(() => {
-    const switchSong = () => {
-      const currentAudio = audioRef.current;
-      currentAudio.src = songsData[currentSongIndex].song_url;
-      if (isPlaying) {
-        currentAudio.play().catch((e) => console.error(e));
-      }
-    };
-
-    switchSong();
-
-    return () => {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-    };
-  }, [currentSongIndex]);
 
   const playPauseHandler = () => {
     setIsPlaying(!isPlaying);
