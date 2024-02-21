@@ -1,70 +1,67 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { songsData } from '../constants/data.js';
 
 const Track = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  // Store the audio element in a ref to persist the same audio element across re-renders
+  const audioRef = React.useRef(new Audio(songsData[0].song_url));
 
-  const playSong = () => {
-    setIsPlaying(true);
+  useEffect(() => {
+    // This effect toggles play/pause based on isPlaying state
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying]); // Re-run this effect when isPlaying changes
+
+  useEffect(() => {
+    // Stop and clean up the current song before switching
+    const switchSong = () => {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      audioRef.current = new Audio(songsData[currentSongIndex].song_url);
+      if (isPlaying) {
+        audioRef.current.play();
+      }
+    };
+    switchSong();
+
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [currentSongIndex]); // Re-run this effect when currentSongIndex changes
+
+  const playPauseHandler = () => {
+    setIsPlaying(!isPlaying);
   };
 
-  const pauseSong = () => {
-    setIsPlaying(false);
+  const nextSongHandler = () => {
+    setCurrentSongIndex((prevIndex) => (prevIndex < songsData.length - 1 ? prevIndex + 1 : 0));
   };
 
-  const playNextSong = () => {
-    const newIndex = (currentSongIndex + 1) % songsData.length;
-    setCurrentSongIndex(newIndex);
-    playSong();
-  };
-
-  const playPreviousSong = () => {
-    const newIndex = (currentSongIndex - 1 + songsData.length) % songsData.length;
-    setCurrentSongIndex(newIndex);
-    playSong();
+  const prevSongHandler = () => {
+    setCurrentSongIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : songsData.length - 1));
   };
 
   return (
-    <div className='bg-gray-500 h-screen'>
-      <h1 className='flex justify-center text-4xl pt-10'>Hello! 👋</h1>
-      
-      <div className='flex pt-16 items-center justify-evenly px-36'>
-        <div className='bg-red-100 h-60 w-60'>
-            prev
-        </div>
-        <div className='bg-red-500 h-80 w-80 gap-5'>
-            curr
-        </div>
-        <div className='bg-red-800 h-60 w-60'>
-            next
-        </div>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white">
+      <div className="flex items-center justify-center space-x-4">
+        <button onClick={prevSongHandler} className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-full">
+          Prev
+        </button>
+        <button onClick={playPauseHandler} className="px-4 py-2 bg-blue-500 hover:bg-blue-400 rounded-full">
+          {isPlaying ? 'Pause' : 'Play'}
+        </button>
+        <button onClick={nextSongHandler} className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-full">
+          Next
+        </button>
       </div>
-
-      <h2>
-        { 
-          
-        }
-      </h2>
-      <p>{songsData[(currentSongIndex + 1) % songsData.length].artist_name}</p>
-
-      <h2>{songsData[currentSongIndex].song_name}</h2>
-      <p>{songsData[currentSongIndex].artist_name}</p>
-
-      <h2>{songsData[(currentSongIndex + 1) % songsData.length].song_name}</h2>
-      <p>{songsData[(currentSongIndex + 1) % songsData.length].artist_name}</p>
-      
-      <audio
-        src={songsData[currentSongIndex].song_url}
-        autoPlay={isPlaying}
-        onPause={pauseSong}
-        onEnded={playNextSong}
-      />
-      <button onClick={playPreviousSong}>Previous</button>
-      <button onClick={isPlaying ? pauseSong : playSong}>
-        {isPlaying ? 'Pause' : 'Play'}
-      </button>
-      <button onClick={playNextSong}>Next</button>
+      <div className="mt-8 text-center">
+        <p className="text-lg">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
+        <p>by <span className="text-blue-400">{Array.isArray(songsData[currentSongIndex].artist_name) ? songsData[currentSongIndex].artist_name.join(", ") : songsData[currentSongIndex].artist_name}</span></p>
+      </div>
     </div>
   );
 };

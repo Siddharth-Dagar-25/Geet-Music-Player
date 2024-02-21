@@ -44,4 +44,13 @@ export const songsData = [
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708354823/Geet/Songs/Mazaak-AnuvJain.mp3",
         cover_image_url: ""
     },
+    {
+        song_name: "Arjan Vailly",
+        song_length: "3:02",
+        artist_name: ["Manan Bharadwaj", "Bhupinder Babbal"],
+        movie_name: "",
+        genre: "punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708521986/Arjan_Vailly_-_Aimal_uljzbe.mp3",
+        cover_image_url: ""
+    },
 ]
