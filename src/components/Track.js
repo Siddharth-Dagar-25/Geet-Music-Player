@@ -58,20 +58,20 @@ const Track = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen p-4 bg-gray-800 text-white">
-      <div className="flex flex-col items-center md:flex-row md:items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
-        <button onClick={prevSongHandler} className="px-4 py-2 text-sm bg-gray-700 hover:bg-gray-600 rounded-full md:text-base">
+      <div className="flex items-center justify-center space-x-4">
+        <button onClick={prevSongHandler} className="px-4 py-2 text-lg bg-gray-700 hover:bg-gray-600 rounded-full">
           Prev
         </button>
-        <button onClick={playPauseHandler} className="px-4 py-2 text-sm bg-blue-500 hover:bg-blue-400 rounded-full md:text-base">
+        <button onClick={playPauseHandler} className="px-4 py-2 text-lg bg-blue-500 hover:bg-blue-400 rounded-full">
           {isPlaying ? 'Pause' : 'Play'}
         </button>
-        <button onClick={nextSongHandler} className="px-4 py-2 text-sm bg-gray-700 hover:bg-gray-600 rounded-full md:text-base">
+        <button onClick={nextSongHandler} className="px-4 py-2 text-lg bg-gray-700 hover:bg-gray-600 rounded-full">
           Next
         </button>
       </div>
       <div className="mt-8 text-center">
-        <p className="text-lg md:text-xl">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
-        <p className="text-md md:text-lg">by <span className="text-blue-400">{Array.isArray(songsData[currentSongIndex].artist_name) ? songsData[currentSongIndex].artist_name.join(", ") : songsData[currentSongIndex].artist_name}</span></p>
+        <p className="text-xl">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
+        <p className="text-lg">by <span className="text-blue-400">{Array.isArray(songsData[currentSongIndex].artist_name) ? songsData[currentSongIndex].artist_name.join(", ") : songsData[currentSongIndex].artist_name}</span></p>
       </div>
     </div>
   );
