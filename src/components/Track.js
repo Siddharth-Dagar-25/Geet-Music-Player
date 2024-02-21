@@ -57,21 +57,21 @@ const Track = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen p-6 bg-gray-800 text-white">
-      <div className="flex flex-col items-center sm:flex-row sm:items-center justify-center space-y-6 sm:space-y-0 sm:space-x-6">
-        <button onClick={prevSongHandler} className="px-6 py-3 text-base bg-gray-700 hover:bg-gray-600 rounded-full sm:px-4 sm:py-2 sm:text-sm">
+    <div className="flex flex-col items-center justify-center w-full min-h-screen p-4 bg-gray-800 text-white">
+      <div className="flex flex-col items-center md:flex-row md:items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+        <button onClick={prevSongHandler} className="px-4 py-2 text-sm bg-gray-700 hover:bg-gray-600 rounded-full md:text-base">
           Prev
         </button>
-        <button onClick={playPauseHandler} className="px-6 py-3 text-base bg-blue-500 hover:bg-blue-400 rounded-full sm:px-4 sm:py-2 sm:text-sm">
+        <button onClick={playPauseHandler} className="px-4 py-2 text-sm bg-blue-500 hover:bg-blue-400 rounded-full md:text-base">
           {isPlaying ? 'Pause' : 'Play'}
         </button>
-        <button onClick={nextSongHandler} className="px-6 py-3 text-base bg-gray-700 hover:bg-gray-600 rounded-full sm:px-4 sm:py-2 sm:text-sm">
+        <button onClick={nextSongHandler} className="px-4 py-2 text-sm bg-gray-700 hover:bg-gray-600 rounded-full md:text-base">
           Next
         </button>
       </div>
-      <div className="mt-10 text-center">
-        <p className="text-xl sm:text-lg">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
-        <p className="text-lg sm:text-md">by <span className="text-blue-400">{Array.isArray(songsData[currentSongIndex].artist_name) ? songsData[currentSongIndex].artist_name.join(", ") : songsData[currentSongIndex].artist_name}</span></p>
+      <div className="mt-8 text-center">
+        <p className="text-lg md:text-xl">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
+        <p className="text-md md:text-lg">by <span className="text-blue-400">{Array.isArray(songsData[currentSongIndex].artist_name) ? songsData[currentSongIndex].artist_name.join(", ") : songsData[currentSongIndex].artist_name}</span></p>
       </div>
     </div>
   );
