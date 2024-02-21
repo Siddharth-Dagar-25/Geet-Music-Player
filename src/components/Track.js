@@ -41,11 +41,15 @@ const Track = () => {
         </div>
       </div>
 
+      <h2>
+        { 
+          
+        }
+      </h2>
+      <p>{songsData[(currentSongIndex + 1) % songsData.length].artist_name}</p>
+
       <h2>{songsData[currentSongIndex].song_name}</h2>
       <p>{songsData[currentSongIndex].artist_name}</p>
-
-      <h2>{songsData[Math.abs(currentSongIndex - 1) % songsData.length].song_name}</h2>
-      <p>{songsData[Math.abs(currentSongIndex - 1 - songsData.length) % songsData.length].artist_name}</p>
 
       <h2>{songsData[(currentSongIndex + 1) % songsData.length].song_name}</h2>
       <p>{songsData[(currentSongIndex + 1) % songsData.length].artist_name}</p>
