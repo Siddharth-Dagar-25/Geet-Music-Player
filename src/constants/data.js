@@ -121,7 +121,7 @@ export const songsData = [
         song_length: "4:00",
         artist_name: ["Danny", "Avvy Sra", "Sagar"],
         movie_name: "",
-        genre: "Love, Romantic",
+        genre: ["Love", "Romantic"],
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708520793/Geet/Songs/VeHanniya.mp3",
         cover_image_url: ""
     },
@@ -130,7 +130,7 @@ export const songsData = [
         song_length: "5:46",
         artist_name: ["Pritam", "Arijit Singh", "Shilpa Rao"],
         movie_name: "",
-        genre: "Love, Romantic",
+        genre: ["Love", "Romantic"],
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708520792/Geet/Songs/TereHawale.mp3",
         cover_image_url: ""
     },
@@ -139,7 +139,7 @@ export const songsData = [
         song_length: "3:47",
         artist_name: ["Mohit Chauhan", "Rochak Kohli"],
         movie_name: "",
-        genre: "Love, Romantic",
+        genre: ["Love", "Romantic"],
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708520793/Geet/Songs/rang-lgeya.mp3",
         cover_image_url: ""
     },
@@ -148,7 +148,7 @@ export const songsData = [
         song_length: "4:11",
         artist_name: ["Manan Bhardwaj", "Arijit Singh"],
         movie_name: "",
-        genre: "Love, Romantic",
+        genre: ["Love", "Romantic"],
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708520792/Geet/Songs/UcheeinUcheeinDewwaro.mp3",
         cover_image_url: ""
     },
@@ -157,7 +157,7 @@ export const songsData = [
         song_length: "3:13",
         artist_name: ["Jasleen Royal", "Arijit Singh", "Raj Shekhar"],
         movie_name: "",
-        genre: "Love, Romantic",
+        genre: ["Love", "Romantic"],
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708520792/Geet/Songs/KholDePar.mp3",
         cover_image_url: ""
     },
