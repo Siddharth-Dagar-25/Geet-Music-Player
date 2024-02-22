@@ -164,8 +164,8 @@ export const songsData = [
     {
         song_name: "One Love",
         song_length: "2:39",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534521/One_Love_qc8lil.mp3",
         cover_image_url: ""
@@ -173,8 +173,8 @@ export const songsData = [
     {
         song_name: "Cheques",
         song_length: "3:03",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534514/Cheques_gejuep.mp3",
         cover_image_url: ""
@@ -182,8 +182,8 @@ export const songsData = [
     {
         song_name: "King Shit",
         song_length: "3:46",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534519/King_Shit_pnghrm.mp3",
         cover_image_url: ""
@@ -191,8 +191,8 @@ export const songsData = [
     {
         song_name: "Baller",
         song_length: "2:28",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534442/Baller_dimgiv.mp3",
         cover_image_url: ""
@@ -200,8 +200,8 @@ export const songsData = [
     {
         song_name: "No Love",
         song_length: "2:50",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534520/No_Love_jmvtoc.mp3",
         cover_image_url: ""
@@ -209,8 +209,8 @@ export const songsData = [
     {
         song_name: "Still Rollin",
         song_length: "2:54",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534523/Still_Rollin_yjqsjo.mp3",
         cover_image_url: ""
@@ -218,8 +218,8 @@ export const songsData = [
     {
         song_name: "You and Me",
         song_length: "2:52",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534526/You_and_Me_tnlh2e.mp3",
         cover_image_url: ""
@@ -227,8 +227,8 @@ export const songsData = [
     {
         song_name: "Her",
         song_length: "2:34",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534516/Her_ela2jz.mp3",
         cover_image_url: ""
@@ -236,8 +236,8 @@ export const songsData = [
     {
         song_name: "Elevated",
         song_length: "3:20",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534516/Elevated_vurasw.mp3",
         cover_image_url: ""
@@ -245,8 +245,8 @@ export const songsData = [
     {
         song_name: "Dior",
         song_length: "2:19",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534516/Dior_rzxpk3.mp3",
         cover_image_url: ""
@@ -254,8 +254,8 @@ export const songsData = [
     {
         song_name: "Safety Off",
         song_length: "2:23",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534522/Safety_Off_opsrlm.mp3",
         cover_image_url: ""
@@ -263,8 +263,8 @@ export const songsData = [
     {
         song_name: "We Rollin",
         song_length: "3:19",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534524/We_Rollin_gmopnz.mp3",
         cover_image_url: ""
@@ -272,8 +272,8 @@ export const songsData = [
     {
         song_name: "Offshore",
         song_length: "2:52",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534520/Offshore_nipxiv.mp3",
         cover_image_url: ""
@@ -281,8 +281,8 @@ export const songsData = [
     {
         song_name: "OG",
         song_length: "3:17",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534521/OG_sirlgg.mp3",
         cover_image_url: ""
@@ -290,8 +290,8 @@ export const songsData = [
     {
         song_name: "Hood Anthem",
         song_length: "3:12",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534517/Hood_Anthem_f5bvpq.mp3",
         cover_image_url: ""
@@ -299,8 +299,8 @@ export const songsData = [
     {
         song_name: "Ice",
         song_length: "2:54",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534518/Ice_cpwiez.mp3",
         cover_image_url: ""
@@ -308,8 +308,8 @@ export const songsData = [
     {
         song_name: "Ruthless",
         song_length: "3:24",
-        artist_name: "",
-        movie_name: "Shubh",
+        artist_name: "Shubh",
+        movie_name: "",
         genre: "",
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534522/Ruthless_lxae5o.mp3",
         cover_image_url: ""
