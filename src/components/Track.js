@@ -1,94 +1,88 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { songsData } from '../constants/data.js'
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { songsData } from '../constants/data.js';
+
+const formatTime = (seconds) => {
+  return new Date(seconds * 1000).toISOString().substr(14, 5);
+};
 
 const Track = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLooping, setIsLooping] = useState(false); // State to manage loop status
+  const [isLooping, setIsLooping] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const audioRef = useRef(null);
+  const audioRef = useRef(new Audio());
   const progressBarRef = useRef(null);
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
+  const setAudioData = useCallback(() => {
+    setDuration(audioRef.current.duration);
+    setCurrentTime(audioRef.current.currentTime);
+  }, []);
+
+  const updateProgress = useCallback(() => {
+    setCurrentTime(audioRef.current.currentTime);
+  }, []);
+
+  const onSongEnd = useCallback(() => {
+    if (!isLooping) {
+      setCurrentSongIndex((prevIndex) => (prevIndex < songsData.length - 1 ? prevIndex + 1 : 0));
     }
-    audioRef.current = new Audio(songsData[currentSongIndex].song_url);
-    audioRef.current.loop = isLooping; // Set the loop property based on isLooping state
+  }, [isLooping]);
 
-    const setAudioData = () => {
-      setDuration(audioRef.current.duration);
-      setCurrentTime(audioRef.current.currentTime);
-    };
+  useEffect(() => {
+    const currentAudio = audioRef.current;
+    currentAudio.pause();
+    currentAudio.src = songsData[currentSongIndex].song_url;
+    currentAudio.loop = isLooping;
 
-    const updateProgress = () => {
-      setCurrentTime(audioRef.current.currentTime);
-    };
-
-    const onSongEnd = () => {
-      if (!isLooping) { // Check if looping is not enabled to move to the next song
-        goToNextSong();
-      }
-      // If looping is enabled, the audio element's loop attribute takes care of replaying the current track.
-    };
-
-    audioRef.current.addEventListener('loadeddata', setAudioData);
-    audioRef.current.addEventListener('timeupdate', updateProgress);
-    audioRef.current.addEventListener('ended', onSongEnd); // Listen for when the song ends
+    currentAudio.addEventListener('loadeddata', setAudioData);
+    currentAudio.addEventListener('timeupdate', updateProgress);
+    currentAudio.addEventListener('ended', onSongEnd);
 
     if (isPlaying) {
-      audioRef.current.play().catch((e) => console.log('Playback was prevented:', e));
+      currentAudio.play().catch((e) => console.log('Playback was prevented:', e));
     }
 
     return () => {
-      if (audioRef.current) {
-        audioRef.current.removeEventListener('loadeddata', setAudioData);
-        audioRef.current.removeEventListener('timeupdate', updateProgress);
-        audioRef.current.removeEventListener('ended', onSongEnd); // Remove event listener on cleanup
-      }
+      currentAudio.removeEventListener('loadeddata', setAudioData);
+      currentAudio.removeEventListener('timeupdate', updateProgress);
+      currentAudio.removeEventListener('ended', onSongEnd);
     };
-  }, [currentSongIndex, isPlaying, isLooping]);
+  }, [currentSongIndex, isPlaying, isLooping, setAudioData, updateProgress, onSongEnd]);
 
   useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play().catch((e) => console.error('Playback was prevented:', e));
-    } else {
-      audioRef.current.pause();
-    }
+    const playPause = async () => {
+      if (isPlaying) {
+        await audioRef.current.play().catch((e) => console.error('Playback was prevented:', e));
+      } else {
+        audioRef.current?.pause();
+      }
+    };
+
+    playPause();
   }, [isPlaying]);
 
-  const goToNextSong = () => {
-    setCurrentSongIndex((prevIndex) => (prevIndex < songsData.length - 1 ? prevIndex + 1 : 0));
-  };
-
-  const playPauseHandler = () => {
+  const playPauseHandler = useCallback(() => {
     setIsPlaying(!isPlaying);
-  };
+  }, [isPlaying]);
 
-  const nextSongHandler = () => {
-    goToNextSong();
-  };
+  const nextSongHandler = useCallback(() => {
+    setCurrentSongIndex((prevIndex) => (prevIndex < songsData.length - 1 ? prevIndex + 1 : 0));
+  }, []);
 
-  const prevSongHandler = () => {
+  const prevSongHandler = useCallback(() => {
     setCurrentSongIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : songsData.length - 1));
-  };
+  }, []);
 
-  // Handler to toggle loop state
-  const toggleLoopHandler = () => {
+  const toggleLoopHandler = useCallback(() => {
     setIsLooping(!isLooping);
-  };
+  }, [isLooping]);
 
-  const changeProgressBar = (e) => {
+  const changeProgressBar = useCallback((e) => {
     const width = progressBarRef.current.clientWidth;
     const clickX = e.nativeEvent.offsetX;
-    const duration = audioRef.current.duration;
-    audioRef.current.currentTime = (clickX / width) * duration;
-  };
-
-  const formatTime = (seconds) => {
-    return new Date(seconds * 1000).toISOString().substr(14, 5);
-  };
+    audioRef.current.currentTime = (clickX / width) * audioRef.current.duration;
+  }, []);
 
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
@@ -121,6 +115,6 @@ const Track = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Track;
