@@ -127,18 +127,6 @@ const Track = () => {
         </div>
         <span className="text-xs text-gray-400">{formatTime(duration)}</span>
       </div>
-      {/* Volume Slider */}
-      <div className="volume-control mt-4">
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={volume}
-          onChange={volumeControlHandler}
-          className="volume-slider"
-        />
-      </div>
     </div>
   );
 }
