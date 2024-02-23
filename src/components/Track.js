@@ -13,6 +13,7 @@ const Track = () => {
   const [duration, setDuration] = useState(0);
   const audioRef = useRef(new Audio());
   const progressBarRef = useRef(null);
+  const [volume, setVolume] = useState(1);
 
   const setAudioData = useCallback(() => {
     setDuration(audioRef.current.duration);
@@ -29,9 +30,9 @@ const Track = () => {
     }
   }, [isLooping]);
 
+  // Effect for audio source loading
   useEffect(() => {
     const currentAudio = audioRef.current;
-    currentAudio.pause();
     currentAudio.src = songsData[currentSongIndex].song_url;
     currentAudio.loop = isLooping;
 
@@ -39,6 +40,7 @@ const Track = () => {
     currentAudio.addEventListener('timeupdate', updateProgress);
     currentAudio.addEventListener('ended', onSongEnd);
 
+    // Attempt to play if already in playing state, handling autoplay policy
     if (isPlaying) {
       currentAudio.play().catch((e) => console.log('Playback was prevented:', e));
     }
@@ -48,14 +50,20 @@ const Track = () => {
       currentAudio.removeEventListener('timeupdate', updateProgress);
       currentAudio.removeEventListener('ended', onSongEnd);
     };
-  }, [currentSongIndex, isPlaying, isLooping, setAudioData, updateProgress, onSongEnd]);
+  }, [currentSongIndex, isLooping, setAudioData, updateProgress, onSongEnd]);
 
+  // Volume control effect
+  useEffect(() => {
+    audioRef.current.volume = volume;
+  }, [volume]);
+
+  // Play/Pause effect
   useEffect(() => {
     const playPause = async () => {
       if (isPlaying) {
         await audioRef.current.play().catch((e) => console.error('Playback was prevented:', e));
       } else {
-        audioRef.current?.pause();
+        audioRef.current.pause();
       }
     };
 
@@ -81,8 +89,14 @@ const Track = () => {
   const changeProgressBar = useCallback((e) => {
     const width = progressBarRef.current.clientWidth;
     const clickX = e.nativeEvent.offsetX;
-    audioRef.current.currentTime = (clickX / width) * audioRef.current.duration;
+    const newTime = (clickX / width) * audioRef.current.duration;
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(newTime); // Update currentTime based on progress bar click
   }, []);
+
+  const volumeControlHandler = (e) => {
+    setVolume(e.target.value);
+  };
 
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
@@ -112,6 +126,18 @@ const Track = () => {
           <div className="bg-blue-500 h-2 rounded-full" style={{ width: `${progress}%` }}></div>
         </div>
         <span className="text-xs text-gray-400">{formatTime(duration)}</span>
+      </div>
+      {/* Volume Slider */}
+      <div className="volume-control mt-4">
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={volume}
+          onChange={volumeControlHandler}
+          className="volume-slider"
+        />
       </div>
     </div>
   );
