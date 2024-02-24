@@ -34,23 +34,37 @@ const Track = () => {
 
   useEffect(() => {
     const currentAudio = audioRef.current;
-    currentAudio.src = songsData[currentSongIndex].song_url;
+  
+    // Function to attempt playback
+    const tryPlay = () => {
+      // Only attempt to play if isPlaying is true
+      if (isPlaying) {
+        currentAudio.play().catch((e) => console.error('Playback was prevented:', e));
+      }
+    };
+  
+    // Set src only if it's different to avoid reloading
+    if (currentAudio.src !== songsData[currentSongIndex].song_url) {
+      currentAudio.src = songsData[currentSongIndex].song_url;
+      // Once the source is set, the loadeddata event will fire, indicating the media is ready to play.
+      // We leverage this event to attempt playback, ensuring it respects the autoplay policy.
+      currentAudio.addEventListener('loadeddata', tryPlay);
+    }
+  
     currentAudio.loop = isLooping;
-
+  
     currentAudio.addEventListener('loadeddata', setAudioData);
     currentAudio.addEventListener('timeupdate', updateProgress);
     currentAudio.addEventListener('ended', onSongEnd);
-
-    if (isPlaying) {
-      currentAudio.play().catch((e) => console.log('Playback was prevented:', e));
-    }
-
+  
+    // Cleanup function to remove event listeners
     return () => {
       currentAudio.removeEventListener('loadeddata', setAudioData);
       currentAudio.removeEventListener('timeupdate', updateProgress);
       currentAudio.removeEventListener('ended', onSongEnd);
+      currentAudio.removeEventListener('loadeddata', tryPlay); // Ensure to remove tryPlay listener as well
     };
-  }, [currentSongIndex, isLooping, setAudioData, updateProgress, onSongEnd, isPlaying]);
+  }, [currentSongIndex, isLooping, isPlaying, setAudioData, updateProgress, onSongEnd]);  
 
   useEffect(() => {
     audioRef.current.volume = volume;
@@ -67,6 +81,11 @@ const Track = () => {
 
     playPause();
   }, [isPlaying]);
+
+  // This useEffect hook ensures that changes to isLooping directly update the loop property.
+  useEffect(() => {
+    audioRef.current.loop = isLooping;
+  }, [isLooping]);
 
   const playPauseHandler = useCallback(() => {
     setIsPlaying(!isPlaying);
