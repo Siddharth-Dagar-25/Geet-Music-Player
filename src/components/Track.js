@@ -111,24 +111,42 @@ const Track = () => {
   };
 
   const selectSongFromSearch = (index) => {
-    setCurrentSongIndex(index);
+    const songIndex = songsData.findIndex((song) => song.song_name === searchResults[index].song_name);
+    setCurrentSongIndex(songIndex);
     setSearchQuery('');
     setSearchResults([]);
+    setIsPlaying(true); // Auto-play selected song
   };
 
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen p-4 bg-gray-800 text-white">
-      {/* Search Bar */}
       <div className="absolute top-0 right-0 p-4">
         <input
           type="text"
           placeholder="Search songs..."
           value={searchQuery}
           onChange={(e) => searchSongs(e.target.value)}
-          className="p-2 bg-gray-700 text-white"
+          className="p-2 m-2 bg-gray-700 text-white"
         />
+        {searchQuery && (
+          <div className="absolute mt-12 bg-gray-700 text-white w-56">
+            {searchResults.length > 0 ? (
+              searchResults.map((song, index) => (
+                <div
+                  key={index}
+                  className="p-2 hover:bg-gray-600 cursor-pointer"
+                  onClick={() => selectSongFromSearch(index)}
+                >
+                  {song.song_name}
+                </div>
+              ))
+            ) : (
+              <div className="p-2">Song is not available</div>
+            )}
+          </div>
+        )}
       </div>
       <div className="flex items-center justify-center space-x-4">
         <button onClick={prevSongHandler} className="px-4 py-2 text-lg bg-gray-700 hover:bg-gray-600 rounded-full">
@@ -144,24 +162,9 @@ const Track = () => {
           {isLooping ? 'Looping' : 'Loop'}
         </button>
       </div>
-      <div className="mt-8 text-center">
-        {/* Search Results */}
-        {searchQuery && searchResults.length > 0 ? (
-          <div>
-            {searchResults.map((song, index) => (
-              <p key={index} className="text-xl cursor-pointer" onClick={() => selectSongFromSearch(index)}>
-                <span className="text-blue-400">{song.song_name}</span> by <span className="text-blue-400">{song.artist_name}</span>
-              </p>
-            ))}
-          </div>
-        ) : searchQuery && searchResults.length === 0 ? (
-          <p className="text-xl">Song is not available</p>
-        ) : (
-          <>
-            <p className="text-xl">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
-            <p className="text-lg">by <span className="text-blue-400">{songsData[currentSongIndex].artist_name}</span></p>
-          </>
-        )}
+      <div className='mt-8 text-center'>
+        <p className="text-xl">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
+        <p className="text-lg">by <span className="text-blue-400">{songsData[currentSongIndex].artist_name}</span></p>
       </div>
       <div className="flex items-center w-4/5 max-w-6xl mt-4">
         <span className="text-xs text-gray-400">{formatTime(currentTime)}</span>
