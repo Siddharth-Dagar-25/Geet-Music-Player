@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { songsData } from '../constants/data.js';
+import FeedbackForm from './FeedbackForm.js';
 
 const formatTime = (seconds) => {
   return new Date(seconds * 1000).toISOString().substr(14, 5);
@@ -203,6 +204,7 @@ const Track = () => {
           className="volume-slider"
         />
       </div>
+      <FeedbackForm />
     </div>
   );
 }
