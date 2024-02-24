@@ -131,7 +131,7 @@ const Track = () => {
           className="p-2 m-2 bg-gray-700 text-white"
         />
         {searchQuery && (
-          <div className="absolute mt-12 bg-gray-700 text-white w-56">
+          <div className="absolute bg-gray-700 text-white w-56">
             {searchResults.length > 0 ? (
               searchResults.map((song, index) => (
                 <div
