@@ -14,6 +14,8 @@ const Track = () => {
   const audioRef = useRef(new Audio());
   const progressBarRef = useRef(null);
   const [volume, setVolume] = useState(1);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
 
   const setAudioData = useCallback(() => {
     setDuration(audioRef.current.duration);
@@ -30,7 +32,6 @@ const Track = () => {
     }
   }, [isLooping]);
 
-  // Effect for audio source loading
   useEffect(() => {
     const currentAudio = audioRef.current;
     currentAudio.src = songsData[currentSongIndex].song_url;
@@ -40,7 +41,6 @@ const Track = () => {
     currentAudio.addEventListener('timeupdate', updateProgress);
     currentAudio.addEventListener('ended', onSongEnd);
 
-    // Attempt to play if already in playing state, handling autoplay policy
     if (isPlaying) {
       currentAudio.play().catch((e) => console.log('Playback was prevented:', e));
     }
@@ -50,14 +50,12 @@ const Track = () => {
       currentAudio.removeEventListener('timeupdate', updateProgress);
       currentAudio.removeEventListener('ended', onSongEnd);
     };
-  }, [currentSongIndex, isLooping, setAudioData, updateProgress, onSongEnd]);
+  }, [currentSongIndex, isLooping, setAudioData, updateProgress, onSongEnd, isPlaying]);
 
-  // Volume control effect
   useEffect(() => {
     audioRef.current.volume = volume;
   }, [volume]);
 
-  // Play/Pause effect
   useEffect(() => {
     const playPause = async () => {
       if (isPlaying) {
@@ -91,17 +89,47 @@ const Track = () => {
     const clickX = e.nativeEvent.offsetX;
     const newTime = (clickX / width) * audioRef.current.duration;
     audioRef.current.currentTime = newTime;
-    setCurrentTime(newTime); // Update currentTime based on progress bar click
+    setCurrentTime(newTime);
   }, []);
 
   const volumeControlHandler = (e) => {
     setVolume(e.target.value);
   };
 
+  const searchSongs = (query) => {
+    setSearchQuery(query);
+    if (!query.trim()) {
+      setSearchResults([]);
+      return;
+    }
+
+    const filteredSongs = songsData.filter((song) =>
+      song.song_name.toLowerCase().includes(query.toLowerCase())
+    );
+
+    setSearchResults(filteredSongs);
+  };
+
+  const selectSongFromSearch = (index) => {
+    setCurrentSongIndex(index);
+    setSearchQuery('');
+    setSearchResults([]);
+  };
+
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen p-4 bg-gray-800 text-white">
+      {/* Search Bar */}
+      <div className="absolute top-0 right-0 p-4">
+        <input
+          type="text"
+          placeholder="Search songs..."
+          value={searchQuery}
+          onChange={(e) => searchSongs(e.target.value)}
+          className="p-2 bg-gray-700 text-white"
+        />
+      </div>
       <div className="flex items-center justify-center space-x-4">
         <button onClick={prevSongHandler} className="px-4 py-2 text-lg bg-gray-700 hover:bg-gray-600 rounded-full">
           Prev
@@ -117,8 +145,23 @@ const Track = () => {
         </button>
       </div>
       <div className="mt-8 text-center">
-        <p className="text-xl">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
-        <p className="text-lg">by <span className="text-blue-400">{songsData[currentSongIndex].artist_name}</span></p>
+        {/* Search Results */}
+        {searchQuery && searchResults.length > 0 ? (
+          <div>
+            {searchResults.map((song, index) => (
+              <p key={index} className="text-xl cursor-pointer" onClick={() => selectSongFromSearch(index)}>
+                <span className="text-blue-400">{song.song_name}</span> by <span className="text-blue-400">{song.artist_name}</span>
+              </p>
+            ))}
+          </div>
+        ) : searchQuery && searchResults.length === 0 ? (
+          <p className="text-xl">Song is not available</p>
+        ) : (
+          <>
+            <p className="text-xl">Now playing: <span className="text-blue-400">{songsData[currentSongIndex].song_name}</span></p>
+            <p className="text-lg">by <span className="text-blue-400">{songsData[currentSongIndex].artist_name}</span></p>
+          </>
+        )}
       </div>
       <div className="flex items-center w-4/5 max-w-6xl mt-4">
         <span className="text-xs text-gray-400">{formatTime(currentTime)}</span>
@@ -127,7 +170,6 @@ const Track = () => {
         </div>
         <span className="text-xs text-gray-400">{formatTime(duration)}</span>
       </div>
-      {/* Volume Slider */}
       <div className="volume-control mt-4">
         <input
           type="range"
