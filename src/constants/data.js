@@ -314,4 +314,337 @@ export const songsData = [
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708534522/Ruthless_lxae5o.mp3",
         cover_image_url: ""
     },
+    {
+        song_name: "Bewafa",
+        song_length: "3:44",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861271/spotifydown.com_-_Bewafa_c15lry.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Amplifier",
+        song_length: "3:53",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861271/spotifydown.com_-_Amplifier_vh9kcp.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Satisfya",
+        song_length: "3:00",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861280/spotifydown.com_-_Satisfya_cvtjf9.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Aaja We Mahiya",
+        song_length: "3:52",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861270/spotifydown.com_-_Aaja_We_Mahiya_jhqikg.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Pata Chalgea",
+        song_length: "4:45",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861278/spotifydown.com_-_Pata_Chalgea_rg41nc.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Deposit",
+        song_length: "2:12",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861272/spotifydown.com_-_Deposit_dfeqkk.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Imaginary",
+        song_length: "3:19",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861276/spotifydown.com_-_Imaginary_whi4uo.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Peli Waar",
+        song_length: "3:11",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861279/spotifydown.com_-_Peli_Waar_nlvju4.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Ni Nachleh",
+        song_length: "3:47",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861277/spotifydown.com_-_Ni_Nachleh_moupwl.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Gora Gora Rang - Remix",
+        song_length: "3:54",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861274/spotifydown.com_-_Gora_Gora_Rang_-_Remix_m9c0ne.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Gora Gora Rang",
+        song_length: "3:01",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861273/spotifydown.com_-_Gora_Gora_Rang_feat._Imran_Khan_jfozxd.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Qott Ghusian Da",
+        song_length: "2:58",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861280/spotifydown.com_-_Qott_Ghusian_Da_fs0g82.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Knightridah",
+        song_length: "3:10",
+        artist_name: "Imran Khan",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861276/spotifydown.com_-_Knightridah_fcggbl.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "The Last Ride",
+        song_length: "4:22",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861021/The_Last_Ride_chzjsa.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Mera Na",
+        song_length: "3:21",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861017/Mera_Na_f9z5gl.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "GOAT",
+        song_length: "3:35",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861012/GOAT_peovvo.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "295",
+        song_length: "4:30",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861007/295_mq2ohp.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Same Beef",
+        song_length: "4:50",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861019/Same_Beef_lc0elf.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Just Listen",
+        song_length: "4:44",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861016/Just_Listen_ejkqib.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Famous",
+        song_length: "4:10",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861012/Famous_fguhtt.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Badfella",
+        song_length: "3:38",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861009/Badfella_pellfn.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Never Fold",
+        song_length: "3:03",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861016/Never_Fold_n181dr.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Old Skool",
+        song_length: "4:14",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861018/Old_Skool_ujimdc.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Bambiha Bole",
+        song_length: "5:01",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861010/Bambiha_Bole_w6mt6x.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Chorni",
+        song_length: "3:01",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861010/Chorni_bgknen.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Jatt Da Muqabala",
+        song_length: "3:24",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861014/Jatt_Da_Muqabala_qipydd.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Tochan",
+        song_length: "3:42",
+        artist_name: "Sidhu Moose Wala",
+        movie_name: "",
+        genre: "Punjabi",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708861022/Tochan_qm7fvg.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Check It Out",
+        song_length: "3:16",
+        artist_name: ["Paradox", "Parmish Verma"],
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860755/Check_It_Out_ywwcre.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Jaadugar",
+        song_length: "3:12",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860758/Jaadugar_tcxmxg.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Hasti Rahe Tu",
+        song_length: "3:05",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860755/Hasti_Rahe_Tu_ps3we2.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Babam Bam",
+        song_length: "2:18",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860754/Babam_Bam_From__Mtv_Hustle_2.0__jpcdyc.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Rihaayi",
+        song_length: "2:48",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860759/Rihaayi_yjkity.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Chore NCR Aale",
+        song_length: "3:20",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860755/Chhore_Ncr_Aale_pi1110.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Glitch",
+        song_length: "3:30",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860755/Glitch_sm0s4k.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Bt Ho Gayi",
+        song_length: "2:36",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860755/Bt_Ho_Gayi_hzhvaj.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Mileya Ni",
+        song_length: "2:50",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860758/Mileya_Ni_slwdu7.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Perfy",
+        song_length: "3:03",
+        artist_name: "Paradox",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860758/Perfy_eoyntt.mp3",
+        cover_image_url: ""
+    },
 ];
