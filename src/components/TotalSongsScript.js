@@ -42,7 +42,7 @@ const TotalSongsScript = () => {
     }, [subIndex, index, reverse, skills]);
 
     return (
-        <div id="skills" className="text-lg font-semibold text-[#ff9e24] mt-2 sm:mt-8">
+        <div id="skills" className="text-lg font-semibold text-[#ff9e24] mt-8 lg:mt-2">
             <span className="role">{currentSkill}</span>
         </div>
     );
