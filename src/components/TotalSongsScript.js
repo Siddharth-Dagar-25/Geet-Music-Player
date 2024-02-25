@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { songsData } from '../constants/data.js';
 
-const TypingEffect = () => {
+const TotalSongsScript = () => {
     const skills = [
         `Geet now boasts a vibrant collection of ${songsData.length} songs.`,
         "Discover diverse tunes for every mood."
@@ -42,10 +42,10 @@ const TypingEffect = () => {
     }, [subIndex, index, reverse, skills]);
 
     return (
-        <div id="skills" className="text-lg font-semibold text-[#ff9e24]">
+        <div id="skills" className="text-lg font-semibold text-[#ff9e24] mt-2 sm:mt-8">
             <span className="role">{currentSkill}</span>
         </div>
     );
 };
 
-export default TypingEffect;
+export default TotalSongsScript;
