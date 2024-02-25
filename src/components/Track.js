@@ -1,6 +1,15 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { songsData } from '../constants/data.js';
 import FeedbackForm from './FeedbackForm.js';
+import TotalSongsScript from './TotalSongsScript.js';
+import { FaVolumeDown } from "react-icons/fa";
+import { FaVolumeUp } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
+import { FaPause } from "react-icons/fa6";
+import { IoPlaySkipForwardSharp } from "react-icons/io5";
+import { IoPlaySkipBackSharp } from "react-icons/io5";
+import { MdLoop } from "react-icons/md";
+import { FcMusic } from "react-icons/fc";
 
 const formatTime = (seconds) => {
   return new Date(seconds * 1000).toISOString().substr(14, 5);
@@ -142,13 +151,16 @@ const Track = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen p-4 bg-gray-800 text-white">
+      <div className='absolute top-0 left-0 p-4'>
+        <TotalSongsScript/>
+      </div>
       <div className="absolute top-0 right-0 p-4">
         <input
           type="text"
           placeholder="Search songs..."
           value={searchQuery}
           onChange={(e) => searchSongs(e.target.value)}
-          className="p-2 m-2 bg-gray-700 text-white"
+          className="p-2 m-2 bg-gray-700 text-white rounded-xl"
         />
         {searchQuery && (
           <div className="absolute bg-gray-700 text-white w-56">
@@ -169,17 +181,20 @@ const Track = () => {
         )}
       </div>
       <div className="flex items-center justify-center space-x-4">
-        <button onClick={prevSongHandler} className="px-4 py-2 text-lg bg-gray-700 hover:bg-gray-600 rounded-full">
-          Prev
+      <button onClick={toggleLoopHandler} className={`px-4 py-2 text-lg ${isLooping ? 'bg-green-500' : 'bg-gray-700'} rounded-full`}>
+          {isLooping ? <MdLoop /> : <MdLoop />}
         </button>
-        <button onClick={playPauseHandler} className="px-4 py-2 text-lg bg-blue-500 hover:bg-blue-400 rounded-full">
-          {isPlaying ? 'Pause' : 'Play'}
+        <button onClick={prevSongHandler} className="px-4 py-2 text-lg bg-gray-700 hover:bg-gray-600 rounded-full">
+        <IoPlaySkipBackSharp />
+        </button>
+        <button onClick={playPauseHandler} className="px-4 py-4 text-lg bg-blue-500 hover:bg-blue-400 rounded-full">
+          {isPlaying ? <FaPause /> : <FaPlay />}
         </button>
         <button onClick={nextSongHandler} className="px-4 py-2 text-lg bg-gray-700 hover:bg-gray-600 rounded-full">
-          Next
+          <IoPlaySkipForwardSharp />
         </button>
-        <button onClick={toggleLoopHandler} className={`px-4 py-2 text-lg ${isLooping ? 'bg-green-500' : 'bg-gray-700'} hover:bg-gray-600 rounded-full`}>
-          {isLooping ? 'Looping' : 'Loop'}
+        <button onClick={toggleLoopHandler} className={`px-4 py-2 text-lg ${isLooping ? 'bg-green-500' : 'bg-gray-700'} rounded-full`}>
+          {isLooping ? <MdLoop /> : <MdLoop />}
         </button>
       </div>
       <div className='mt-8 text-center'>
@@ -193,7 +208,8 @@ const Track = () => {
         </div>
         <span className="text-xs text-gray-400">{formatTime(duration)}</span>
       </div>
-      <div className="volume-control mt-4">
+      <div className="volume-control mt-4 flex gap-2">
+      <FaVolumeDown />
         <input
           type="range"
           min="0"
@@ -203,6 +219,7 @@ const Track = () => {
           onChange={volumeControlHandler}
           className="volume-slider"
         />
+        <FaVolumeUp />
       </div>
       <FeedbackForm />
     </div>
