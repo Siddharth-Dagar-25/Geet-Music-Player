@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { songsData } from '../constants/data.js';
 import FeedbackForm from './FeedbackForm.js';
-import TotalSongsScript from './TotalSongsScript.js';
 import { FaVolumeDown } from "react-icons/fa";
 import { FaVolumeUp } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
@@ -9,7 +8,6 @@ import { FaPause } from "react-icons/fa6";
 import { IoPlaySkipForwardSharp } from "react-icons/io5";
 import { IoPlaySkipBackSharp } from "react-icons/io5";
 import { MdLoop } from "react-icons/md";
-import { FcMusic } from "react-icons/fc";
 
 const formatTime = (seconds) => {
   return new Date(seconds * 1000).toISOString().substr(14, 5);
@@ -151,9 +149,6 @@ const Track = () => {
 
   return (
     <div className="flex flex-col items-center justify-center w-full min-h-screen p-4 bg-gray-800 text-white">
-      <div className='absolute bottom-8 left-0 p-4'>
-        <TotalSongsScript/>
-      </div>
       <div className="absolute top-0 right-0 p-4">
         <input
           type="text"
