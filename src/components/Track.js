@@ -24,6 +24,7 @@ const Track = () => {
   const [volume, setVolume] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [showSongsList, setShowSongsList] = useState(false); // New state for toggling songs list visibility
 
   const setAudioData = useCallback(() => {
     setDuration(audioRef.current.duration);
@@ -145,6 +146,17 @@ const Track = () => {
     setIsPlaying(true); // Auto-play selected song
   };
 
+  const toggleSongsList = () => {
+    setShowSongsList(!showSongsList);
+  };
+
+  // Function to play a selected song from the list
+  const playSelectedSong = (index) => {
+    setCurrentSongIndex(index);
+    setIsPlaying(true); // Auto-play the selected song
+    setShowSongsList(false); // Hide the songs list after selecting a song
+  };
+
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
   return (
@@ -175,6 +187,25 @@ const Track = () => {
           </div>
         )}
       </div>
+      {/* Button to toggle showing the songs list */}
+      <button onClick={toggleSongsList} className="mb-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded">
+        {showSongsList ? 'Hide Songs' : 'Show All Songs'}
+      </button>
+
+      {/* Conditional rendering for the songs list */}
+      {showSongsList && (
+        <div className="w-full max-w-md bg-gray-700 mb-4 rounded overflow-hidden">
+          {songsData.map((song, index) => (
+            <div
+              key={index}
+              className="text-white p-2 hover:bg-gray-600 cursor-pointer"
+              onClick={() => playSelectedSong(index)}
+            >
+              {song.song_name} - {song.artist_name}
+            </div>
+          ))}
+        </div>
+      )}
       <div className="flex items-center justify-center space-x-4">
       <button onClick={toggleLoopHandler} className={`px-4 py-2 text-lg ${isLooping ? 'bg-green-500' : 'bg-gray-700'} rounded-full`}>
           {isLooping ? <MdLoop /> : <MdLoop />}

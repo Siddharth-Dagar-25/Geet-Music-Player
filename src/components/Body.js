@@ -4,16 +4,16 @@ import Home from './Home.js';
 import Track from './Track.js';
 
 const Body = () => {
-    const appRouter = createBrowserRouter([
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/track",
-          element: <Track />,
-        },
-      ]);
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/track",
+      element: <Track />,
+    },
+  ]);
   return (
     <div>
       <RouterProvider router={appRouter} />
