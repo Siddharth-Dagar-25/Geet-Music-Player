@@ -188,7 +188,7 @@ const Track = () => {
         )}
       </div>
       {/* Button to toggle showing the songs list */}
-      <button onClick={toggleSongsList} className="mb-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded">
+      <button onClick={toggleSongsList} className="mb-4 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded z-30">
         {showSongsList ? 'Hide Songs' : 'Show All Songs'}
       </button>
 
