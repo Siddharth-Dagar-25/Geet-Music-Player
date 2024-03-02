@@ -653,7 +653,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385364/Aafat_vjzipm.mp3",
         cover_image_url: ""
     },
     {
@@ -662,7 +662,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385363/Maan_Meri_Jaan_vs4atj.mp3",
         cover_image_url: ""
     },
     {
@@ -671,7 +671,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385367/Tu_Jaana_Na_Piya_immphm.mp3",
         cover_image_url: ""
     },
     {
@@ -680,7 +680,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385367/Tu_Aake_Dekhle_xgidtm.mp3",
         cover_image_url: ""
     },
     {
@@ -689,7 +689,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385364/Ilzaam_q691mr.mp3",
         cover_image_url: ""
     },
     {
@@ -698,7 +698,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385368/Teri_Ho_Na_Saki_bqfr98.mp3",
         cover_image_url: ""
     },
     {
@@ -707,7 +707,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385364/Sarkaare_egygfl.mp3",
         cover_image_url: ""
     },
     {
@@ -716,7 +716,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385365/Ektarfa_posfrg.mp3",
         cover_image_url: ""
     },
     {
@@ -725,7 +725,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385367/She_Don_t_Give_A_hfbzi8.mp3",
         cover_image_url: ""
     },
     {
@@ -734,7 +734,7 @@ export const songsData = [
         artist_name: "King",
         movie_name: "",
         genre: "Hip-Hop",
-        song_url: "",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385364/OOPS_rsqvlk.mp3",
         cover_image_url: ""
     },
 ];
