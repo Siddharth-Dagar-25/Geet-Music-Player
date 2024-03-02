@@ -647,4 +647,94 @@ export const songsData = [
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1708860758/Perfy_eoyntt.mp3",
         cover_image_url: ""
     },
+    {
+        song_name: "Aafat",
+        song_length: "2:50",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Maan Meri Jaan",
+        song_length: "3:14",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Tu Jaane Na Piya",
+        song_length: "3:46",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Tu Aake Dekhle",
+        song_length: "4:30",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Ilzaam",
+        song_length: "4:07",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Teri Ho Na Saki",
+        song_length: "3:51",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Sarkaare",
+        song_length: "2:43",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Ektarfa",
+        song_length: "3:50",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "She Don't Give a",
+        song_length: "3:26",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
+    {
+        song_name: "OOPS",
+        song_length: "2:43",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "",
+        cover_image_url: ""
+    },
 ];
