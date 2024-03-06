@@ -737,4 +737,13 @@ export const songsData = [
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709385364/OOPS_rsqvlk.mp3",
         cover_image_url: ""
     },
+    {
+        song_name: "Laapata",
+        song_length: "3:54",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730661/Laapata_nsd4xd.mp3",
+        cover_image_url: ""
+    },
 ];
