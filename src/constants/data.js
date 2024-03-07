@@ -746,4 +746,130 @@ export const songsData = [
         song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730661/Laapata_nsd4xd.mp3",
         cover_image_url: ""
     },
+    {
+        song_name: "Tum Saath Rehnaa",
+        song_length: "3:35",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730662/Tum_Saath_Rehnaa_ikfvyr.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Sinner",
+        song_length: "3:49",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730662/Sinner_zizq6f.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "IICONIC",
+        song_length: "3:00",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730662/IICONIC_mvn9gb.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Desi Dan Bilzerian",
+        song_length: "3:21",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730662/Desi_Dan_Bilzerian_of67ic.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Pablo",
+        song_length: "4:39",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730663/Pablo_zpsvbp.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Hum Tumse",
+        song_length: "2:37",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730665/Hum_Tumse_m8pm8y.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Legends",
+        song_length: "3:31",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730666/Legends_yjhs7c.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Blanko",
+        song_length: "3:38",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730666/BLANKO_bhqt6z.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Na Ja Tu",
+        song_length: "3:32",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730666/Na_Ja_Tu_jifgaf.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Ishq Samundar",
+        song_length: "3:06",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730666/Ishq_Samundar_t5yusu.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Good Trip",
+        song_length: "2:42",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730667/Good_Trip_tys0f2.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Shaamein",
+        song_length: "3:52",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730669/Shaamein_nntnmo.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "CROWN",
+        song_length: "3:17",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730669/CROWN_mncs5m.mp3",
+        cover_image_url: ""
+    },
+    {
+        song_name: "Gangster",
+        song_length: "2:41",
+        artist_name: "King",
+        movie_name: "",
+        genre: "Hip-Hop",
+        song_url: "https://res.cloudinary.com/daqtelfvl/video/upload/v1709730669/Gangster_ictvn6.mp3",
+        cover_image_url: ""
+    },
 ];
